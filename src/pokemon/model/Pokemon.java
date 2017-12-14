@@ -15,4 +15,10 @@ public abstract class Pokemon
 		this.number = number;
 	}
 	
+	public String toString()
+	{
+		String description = "Hi, I am a " + name + ", and my HP is " + healthPoints;
+		
+		return description;
+	}
 }
