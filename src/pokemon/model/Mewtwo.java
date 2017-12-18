@@ -6,4 +6,11 @@ public class Mewtwo extends Mew
 	{
 		super(number, name);
 	}
+
+	public int psychoCut()
+	{
+		int damage = 0;
+		
+		return damage;
+	}
 }
