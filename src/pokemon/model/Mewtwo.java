@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Mewtwo extends Mew
+public class Mewtwo extends Mew implements Psychic
 {
 	public Mewtwo(int number, String name)
 	{
