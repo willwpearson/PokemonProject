@@ -24,5 +24,4 @@ public class PokemonController
 		return false;
 	}
 	
-
 }
