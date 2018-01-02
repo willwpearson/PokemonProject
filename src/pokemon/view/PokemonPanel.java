@@ -54,7 +54,7 @@ public class PokemonPanel extends JPanel
 		
 		//Initialize GUI data members
 		appLayout = new SpringLayout();
-		healthLabel = new JLabel("Health:");
+		healthLabel = new JLabel("Health:");	
 		attackLabel = new JLabel("Attack:");
 		nameLabel = new JLabel("Name:");
 		numberLabel = new JLabel("Number:");
@@ -121,7 +121,21 @@ public class PokemonPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		appLayout.putConstraint(SpringLayout.NORTH, iconLabel, 0, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, iconLabel, 0, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, iconLabel, -125, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, iconLabel, -200, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, healthLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.WEST, attackLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, attackLabel, 0, SpringLayout.SOUTH, healthLabel);
+		appLayout.putConstraint(SpringLayout.WEST, nameLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 0, SpringLayout.SOUTH, attackLabel);
+		appLayout.putConstraint(SpringLayout.WEST, numberLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, numberLabel, 0, SpringLayout.SOUTH, nameLabel);
+		appLayout.putConstraint(SpringLayout.WEST, evolvableLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, evolvableLabel, 0, SpringLayout.SOUTH, numberLabel);
+		appLayout.putConstraint(SpringLayout.WEST, modifierLabel, 0, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, modifierLabel, 0, SpringLayout.SOUTH, evolvableLabel);
 	}
 	
 	private void setupListeners()
