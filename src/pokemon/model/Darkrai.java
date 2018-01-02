@@ -2,9 +2,30 @@ package pokemon.model;
 
 public class Darkrai extends Pokemon implements Dark
 {
+	public Darkrai()
+	{
+		super(491, "Darkrai");
+		setup();
+	}
+	
+	public Darkrai(String name)
+	{
+		super(491, name);
+		setup();
+	}
+	
 	public Darkrai(int number, String name)
 	{
 		super(number, name);
+		setup();
+	}
+	
+	protected void setup()
+	{
+		this.setAttackPoints(90);
+		this.setCanEvolve(false);
+		this.setEnhancementModifier(.89);
+		this.setHealthPoints(70);
 	}
 	
 	public int crunch()
