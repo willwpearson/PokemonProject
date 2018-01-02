@@ -2,6 +2,7 @@ package pokemon.view;
 
 import pokemon.controller.PokemonController;
 import javax.swing.*;
+import java.awt.Color;
 
 public class PokemonPanel extends JPanel
 {
@@ -79,5 +80,52 @@ public class PokemonPanel extends JPanel
 		secondType = new JPanel();
 		thirdType = new JPanel();
 		fourthType = new JPanel();
+		
+		setupPanel();
+		setupLayout();
+		setupListeners();
+	}
+	
+	private void setupPanel()
+	{
+		this.setBackground(new Color(220, 20, 60));
+		this.setLayout(appLayout);
+		
+		this.add(healthLabel);
+		this.add(attackLabel);
+		this.add(nameLabel);
+		this.add(numberLabel);
+		this.add(evolvableLabel);
+		this.add(modifierLabel);
+		this.add(iconLabel);
+		
+		this.add(evolvableBox);
+		this.add(nameField);
+		this.add(numberField);
+		this.add(attackField);
+		this.add(healthField);
+		this.add(modifierField);
+
+		this.add(descriptionArea);
+		this.add(typeArea);
+		
+		this.add(saveButton);
+		this.add(clearButton);
+		this.add(pokedexDropdown);
+		
+		this.add(firstType);
+		this.add(secondType);
+		this.add(thirdType);
+		this.add(fourthType);
+	}
+	
+	private void setupLayout()
+	{
+		
+	}
+	
+	private void setupListeners()
+	{
+		
 	}
 }
