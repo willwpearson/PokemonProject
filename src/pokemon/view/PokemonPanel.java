@@ -3,6 +3,8 @@ package pokemon.view;
 import pokemon.controller.PokemonController;
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PokemonPanel extends JPanel
 {
@@ -33,7 +35,6 @@ public class PokemonPanel extends JPanel
 	
 	private JPanel firstType;
 	private JPanel secondType;
-	private JPanel thirdType;
 	
 	
 	private void updatePokedexInfo(int index)
@@ -75,10 +76,8 @@ public class PokemonPanel extends JPanel
 		saveButton = new JButton();
 		clearButton = new JButton();
 		pokedexDropdown = new JComboBox();
-		
 		firstType = new JPanel();
 		secondType = new JPanel();
-		thirdType = new JPanel();
 		
 		setupComboBox();
 		setupTypePanels();
@@ -97,7 +96,6 @@ public class PokemonPanel extends JPanel
 	{
 		firstType.setSize(50, 50);
 		secondType.setSize(50, 50);
-		thirdType.setSize(50, 50);
 	}
 	
 	private void setupPanel()
@@ -129,7 +127,6 @@ public class PokemonPanel extends JPanel
 		
 		this.add(firstType);
 		this.add(secondType);
-		this.add(thirdType);
 	}
 	
 	private void updateTypePanels()
@@ -202,7 +199,6 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, modifierField, 0, SpringLayout.EAST, modifierLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, modifierField, 0, SpringLayout.SOUTH, modifierLabel);
 		appLayout.putConstraint(SpringLayout.EAST, modifierField, 0, SpringLayout.EAST, numberField);
-		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 0, SpringLayout.SOUTH, iconLabel);
 		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 0, SpringLayout.WEST, iconLabel);
 		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, 0, SpringLayout.EAST, iconLabel);
 		appLayout.putConstraint(SpringLayout.WEST, descriptionArea, 0, SpringLayout.EAST, pokedexDropdown);
@@ -215,11 +211,27 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, clearButton, 0, SpringLayout.SOUTH, pokedexDropdown);
 		appLayout.putConstraint(SpringLayout.EAST, clearButton, 0, SpringLayout.EAST, pokedexDropdown);
 		appLayout.putConstraint(SpringLayout.WEST, clearButton, 0, SpringLayout.EAST, saveButton);
-		appLayout.putConstraint(SpringLayout.SOUTH, clearButton, 0, SpringLayout.SOUTH, saveButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, typeArea, 0, SpringLayout.NORTH, pokedexDropdown);
+		appLayout.putConstraint(SpringLayout.NORTH, typeArea, 0, SpringLayout.SOUTH, iconLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, saveButton, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, clearButton, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 60, SpringLayout.SOUTH, iconLabel);
+		appLayout.putConstraint(SpringLayout.EAST, typeArea, -10, SpringLayout.WEST, descriptionArea);
+		appLayout.putConstraint(SpringLayout.WEST, typeArea, 10, SpringLayout.WEST, pokedexDropdown);
 	}
 	
 	private void setupListeners()
 	{
-		
+		pokedexDropdown.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				int selectedPokemonIndex = pokedexDropdown.getSelectedIndex();
+				updatePokedexInfo(selectedPokemonIndex);
+				updateImage();
+				updateTypePanels();
+				repaint();
+			}
+		});
 	}
 }
