@@ -212,12 +212,20 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, clearButton, 0, SpringLayout.EAST, pokedexDropdown);
 		appLayout.putConstraint(SpringLayout.WEST, clearButton, 0, SpringLayout.EAST, saveButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, typeArea, 0, SpringLayout.NORTH, pokedexDropdown);
-		appLayout.putConstraint(SpringLayout.NORTH, typeArea, 0, SpringLayout.SOUTH, iconLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, saveButton, -10, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, clearButton, -10, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 60, SpringLayout.SOUTH, iconLabel);
 		appLayout.putConstraint(SpringLayout.EAST, typeArea, -10, SpringLayout.WEST, descriptionArea);
 		appLayout.putConstraint(SpringLayout.WEST, typeArea, 10, SpringLayout.WEST, pokedexDropdown);
+		appLayout.putConstraint(SpringLayout.NORTH, typeArea, 25, SpringLayout.SOUTH, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, secondType, 0, SpringLayout.SOUTH, iconLabel);
+		appLayout.putConstraint(SpringLayout.WEST, secondType, 0, SpringLayout.WEST, clearButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, secondType, 0, SpringLayout.NORTH, typeArea);
+		appLayout.putConstraint(SpringLayout.EAST, secondType, 115, SpringLayout.WEST, clearButton);
+		appLayout.putConstraint(SpringLayout.NORTH, firstType, 0, SpringLayout.SOUTH, iconLabel);
+		appLayout.putConstraint(SpringLayout.WEST, firstType, 0, SpringLayout.WEST, typeArea);
+		appLayout.putConstraint(SpringLayout.SOUTH, firstType, 0, SpringLayout.NORTH, typeArea);
+		appLayout.putConstraint(SpringLayout.EAST, firstType, 0, SpringLayout.EAST, saveButton);
 	}
 	
 	private void setupListeners()
@@ -228,7 +236,7 @@ public class PokemonPanel extends JPanel
 			{
 				int selectedPokemonIndex = pokedexDropdown.getSelectedIndex();
 				updatePokedexInfo(selectedPokemonIndex);
-				updateImage();
+				//updateImage();
 				updateTypePanels();
 				repaint();
 			}
