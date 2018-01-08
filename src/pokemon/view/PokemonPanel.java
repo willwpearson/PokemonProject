@@ -34,7 +34,6 @@ public class PokemonPanel extends JPanel
 	private JPanel firstType;
 	private JPanel secondType;
 	private JPanel thirdType;
-	private JPanel fourthType;
 	
 	
 	private void updatePokedexInfo(int index)
@@ -80,7 +79,6 @@ public class PokemonPanel extends JPanel
 		firstType = new JPanel();
 		secondType = new JPanel();
 		thirdType = new JPanel();
-		fourthType = new JPanel();
 		
 		setupComboBox();
 		setupTypePanels();
@@ -100,7 +98,6 @@ public class PokemonPanel extends JPanel
 		firstType.setSize(50, 50);
 		secondType.setSize(50, 50);
 		thirdType.setSize(50, 50);
-		fourthType.setSize(50, 50);
 	}
 	
 	private void setupPanel()
@@ -133,7 +130,36 @@ public class PokemonPanel extends JPanel
 		this.add(firstType);
 		this.add(secondType);
 		this.add(thirdType);
-		this.add(fourthType);
+	}
+	
+	private void updateTypePanels()
+	{
+		String[] types = appController.getPokedex().get(pokedexDropdown.getSelectedIndex()).getPokemonTypes();
+		
+		if (types[0].equals("Dark"))
+		{
+			firstType.setBackground(Color.DARK_GRAY);
+		}
+		else if (types[0].equals("Electric"))
+		{
+			firstType.setBackground(Color.yellow);
+		}
+		else if (types[0].equals("Psychic"))
+		{
+			firstType.setBackground(Color.MAGENTA);
+		}
+		else
+		{
+			firstType.setBackground(Color.white);
+		}
+		
+		if (types.length > 1)
+		{
+			if(types[1].equals("Psychic"))
+			{
+				secondType.setBackground(Color.magenta);
+			}
+		}
 	}
 	
 	private void setupLayout()
