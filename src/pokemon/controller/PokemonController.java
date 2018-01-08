@@ -8,6 +8,7 @@ public class PokemonController
 {
 	private List<Pokemon> pokedex;
 	
+	
 	public PokemonController()
 	{
 		pokedex = new ArrayList<Pokemon>();	
