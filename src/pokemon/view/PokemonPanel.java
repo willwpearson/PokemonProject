@@ -89,6 +89,20 @@ public class PokemonPanel extends JPanel
 		setupListeners();
 	}
 	
+	private void setupComboBox()
+	{
+		DefaultComboBoxModel pokemonModel = new DefaultComboBoxModel(appController.convertPokedex());
+		pokedexDropdown.setModel(pokemonModel);
+	}
+	
+	private void setupTypePanels()
+	{
+		firstType.setSize(50, 50);
+		secondType.setSize(50, 50);
+		thirdType.setSize(50, 50);
+		fourthType.setSize(50, 50);
+	}
+	
 	private void setupPanel()
 	{
 		this.setBackground(new Color(220, 20, 60));
