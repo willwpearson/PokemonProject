@@ -60,7 +60,8 @@ public class PokemonPanel extends JPanel
 		numberLabel = new JLabel("Number:");
 		evolvableLabel = new JLabel("Evolve:");
 		modifierLabel = new JLabel("Enhancement Modifier:");
-		iconLabel = new JLabel();
+		
+		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("/pokemon/view/images/Pokemon Default.png")), JLabel.CENTER);
 		
 		evolvableBox = new JCheckBox();
 		nameField = new JTextField();
@@ -81,6 +82,8 @@ public class PokemonPanel extends JPanel
 		thirdType = new JPanel();
 		fourthType = new JPanel();
 		
+		setupComboBox();
+		setupTypePanels();
 		setupPanel();
 		setupLayout();
 		setupListeners();
