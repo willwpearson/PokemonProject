@@ -156,6 +156,10 @@ public class PokemonPanel extends JPanel
 			{
 				secondType.setBackground(Color.magenta);
 			}
+			else
+			{
+				secondType.setBackground(Color.white);
+			}
 		}
 	}
 	
