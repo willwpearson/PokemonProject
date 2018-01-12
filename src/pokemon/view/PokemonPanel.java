@@ -270,7 +270,7 @@ public class PokemonPanel extends JPanel
 			{
 				int selectedPokemonIndex = pokedexDropdown.getSelectedIndex();
 				updatePokedexInfo(selectedPokemonIndex);
-				//updateImage();
+				updateImage();
 				updateTypePanels();
 				repaint();
 			}

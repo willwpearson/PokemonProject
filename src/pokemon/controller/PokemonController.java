@@ -56,4 +56,15 @@ public class PokemonController
 		return names;
 	}
 	
+	public void updateSelected(int selection, int health, int attack, boolean evolve, double modify, String name)
+	{
+		Pokemon selected = pokedex.get(selection);
+		
+		selected.setAttackPoints(attack);
+		selected.setCanEvolve(evolve);
+		selected.setEnhancementModifier(modify);
+		selected.setName(name);
+		selected.setHealthPoints(health);
+	}
+	
 }
