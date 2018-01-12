@@ -173,6 +173,26 @@ public class PokemonPanel extends JPanel
 		}
 	}
 	
+	private void updateImage()
+	{
+		String path = "/pokemon/view/images/";
+		String defaultName = "Pokemon Default";
+		String name = pokedexDropdown.getSelectedItem().toString();
+		String extension = ".png";
+		ImageIcon pokemonIcon;
+		
+		try
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+		}
+		catch(NullPointerException missingImageFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+		}
+		
+		iconLabel.setIcon(pokemonIcon);
+	}
+	
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, iconLabel, 0, SpringLayout.NORTH, this);
