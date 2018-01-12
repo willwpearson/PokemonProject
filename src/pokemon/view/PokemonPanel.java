@@ -39,12 +39,22 @@ public class PokemonPanel extends JPanel
 	
 	private void updatePokedexInfo(int index)
 	{
+		//Update basic fields
 		nameField.setText(appController.getPokedex().get(index).getName());
 		evolvableBox.setSelected(appController.getPokedex().get(index).isCanEvolve());
 		numberField.setText(appController.getPokedex().get(index).getNumber() + "");
 		attackField.setText(appController.getPokedex().get(index).getAttackPoints() + "");
 		healthField.setText(appController.getPokedex().get(index).getHealthPoints() + "");
 		modifierField.setText(appController.getPokedex().get(index).getEnhancementModifier() + "");
+		
+		//Update text ares
+		descriptionArea.setText(appController.getPokedex().get(index).toString());
+		typeArea.setText("");
+		
+		for(String current : appController.getPokedex().get(index).getPokemonTypes())
+		{
+			typeArea.append(current + "\n");
+		}
 	}
 	
 	public PokemonPanel(PokemonController appController)
