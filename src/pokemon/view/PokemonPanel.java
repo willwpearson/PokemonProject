@@ -166,10 +166,22 @@ public class PokemonPanel extends JPanel
 			{
 				secondType.setBackground(Color.magenta);
 			}
+			else if (types[1].equals("Dark"))
+			{
+				secondType.setBackground(Color.DARK_GRAY);
+			}
+			else if (types[1].equals("Electric"))
+			{
+				secondType.setBackground(Color.yellow);
+			}
 			else
 			{
 				secondType.setBackground(Color.white);
 			}
+		}
+		else
+		{
+			secondType.setBackground(Color.white);
 		}
 	}
 	
