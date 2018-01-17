@@ -1,0 +1,6 @@
+Darkrai,491,70,90,0.89,false
+Rotom,479,50,50,0.89,true
+Mew,151,100,100,0.89,true
+Mewtwo,150,106,110,0.89,false
+Umbreon,197,95,65,0.89,false
+Hoopa Unbound,720,80,160,0.89,false

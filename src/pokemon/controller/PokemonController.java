@@ -38,12 +38,24 @@ public class PokemonController
 	{
 		boolean validInt = false;
 		
+		if(input != null)
+		{
+			validInt = true;
+		}
+		
 		return validInt;
 	}
 	
 	public boolean isValidDouble(String input)
 	{
-		return false;
+		boolean validDouble = false;
+		
+		if(input != null)
+		{
+			validDouble = true;
+		}
+		
+		return validDouble;
 	}
 	
 	public String [] convertPokedex()
