@@ -36,7 +36,9 @@ public class PokemonController
 	
 	public boolean isValidInteger(String input)
 	{
-		return false;
+		boolean validInt = false;
+		
+		return validInt;
 	}
 	
 	public boolean isValidDouble(String input)
@@ -65,6 +67,8 @@ public class PokemonController
 		selected.setEnhancementModifier(modify);
 		selected.setName(name);
 		selected.setHealthPoints(health);
+		
+		FileController.savePokemonToFile((ArrayList<Pokemon>) pokedex);
 	}
 	
 }

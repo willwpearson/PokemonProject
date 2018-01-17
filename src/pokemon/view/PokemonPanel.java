@@ -83,8 +83,8 @@ public class PokemonPanel extends JPanel
 		descriptionArea = new JTextArea();
 		typeArea = new JTextArea();
 		
-		saveButton = new JButton();
-		clearButton = new JButton();
+		saveButton = new JButton("Save");
+		clearButton = new JButton("Clear");
 		pokedexDropdown = new JComboBox();
 		firstType = new JPanel();
 		secondType = new JPanel();
